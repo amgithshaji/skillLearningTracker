@@ -50,6 +50,7 @@ function Edit({ skill,getskilldata }) {
   const removeBtn = async(id)=>{
    await deleteSkillAPI(id)
    getskilldata()
+   alert('skill deleted successfully')
   }
 
   return (
