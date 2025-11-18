@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
 import '../Reactbits.css';
+import { Link } from 'react-router-dom';
 
 const CardNav = ({
   logo,
@@ -153,13 +154,15 @@ const CardNav = ({
             <img src={logo} alt={logoAlt} className="logo" />
           </div>
 
-          <button
-            type="button"
-            className="card-nav-cta-button"
-            style={{ background: buttonBgColor, color: buttonTextColor }}
-          >
-            Get Started
-          </button>
+    <Link to={'/skillgenerator'}>
+            <button
+              type="button"
+              className="card-nav-cta-button"
+              style={{ background: buttonBgColor, color: buttonTextColor }}
+            >
+              Get Started
+            </button>
+    </Link>
         </div>
 
         <div className="card-nav-content" aria-hidden={!isExpanded}>
