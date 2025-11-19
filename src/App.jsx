@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<LandinPage />} />
         <Route path='/skillgenerator' element={<SkillGenerator />} />
-        <Route path='/viewskill' element={<ViewSkill />} />
+        <Route path='/viewskilll' element={<ViewSkill />} />
         <Route path='/*' element={<Pnf />} />
       </Routes>
       <Footer/>

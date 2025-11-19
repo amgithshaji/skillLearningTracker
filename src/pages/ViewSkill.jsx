@@ -36,10 +36,7 @@ const getskilldata = async()=>{
        <h6 className="card-title">{item?.topicname}</h6>
   
 </div>
-<div className='d-flex align-items-center justify-content-center' >
-      <h6 className="card-title">{item?.progress}</h6>
-  
-</div>   
+ 
 <div className='d-flex align-items-center justify-content-center' >
   <h6 className="card-text">{item?.status}</h6>
   
@@ -48,6 +45,10 @@ const getskilldata = async()=>{
   <h6 className="card-text">{item?.deadline}</h6>
   
 </div> 
+<div className='d-flex align-items-center justify-content-center' >
+      <h6 className="card-title">{item?.progress}</h6>
+  
+</div>  
   <div className=' d-flex align-items-center justify-content-center ' >
       {/* <  MdDelete className='fs-3 me-5 text-danger ' /> */}
        <Edit getskilldata={getskilldata} skill={item} setSkill={setskill} />
