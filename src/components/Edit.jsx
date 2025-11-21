@@ -66,9 +66,10 @@ function Edit({ skill,getskilldata }) {
           <Box sx={{ mt: 2, display: "flex", flexDirection: "column", gap: 1 }}>
             <TextField value={editSkill.skillname} onChange={e => setEditSkill({ ...editSkill, skillname: e.target.value })}variant="standard"label="Skill Name"/>
             <TextField value={editSkill.topicname} onChange={e => setEditSkill({ ...editSkill, topicname: e.target.value })} variant="standard"label="Topic Name"/>
-            <TextField value={editSkill.progress} onChange={e => setEditSkill({ ...editSkill, progress: e.target.value })} variant="standard"label="Progress"/>
             <TextField value={editSkill.status} onChange={e => setEditSkill({ ...editSkill, status: e.target.value })}variant="standard"label="Status"/>
             <TextField value={editSkill.deadline} onChange={e => setEditSkill({ ...editSkill, deadline: e.target.value })}variant="standard"label="Deadline"/>
+            <TextField value={editSkill.progress} onChange={e => setEditSkill({ ...editSkill, progress: e.target.value })} variant="standard"label="Note"/>
+
             <button onClick={updateBtn} className='btn btn-primary mt-3'>Update</button>
           </Box>
         </Box>

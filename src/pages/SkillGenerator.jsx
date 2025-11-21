@@ -41,7 +41,7 @@ function SkillGenerator() {
   return (
     <>
       <section style={{ backgroundColor: "#f2f2f2", minHeight: "150vh" }}>
-        <h1 style={{ fontSize: "clamp(100px, 5vw, 90px)", paddingTop: "120px" }} className='text-center fw-bold' >Hey Now..! <span style={{ color: "blue" }}  >Tell Me</span> <br /> <span style={{ color: "blue" }}>What You </span> <br /> Wanna Learn?</h1>
+        <h1 style={{ fontSize: "clamp(100px, 5vw, 90px)", paddingTop: "120px" }} className='text-center fw-bold' >Hey..! Now <span style={{ color: "blue" }}  >Tell Me</span> <br /> <span style={{ color: "blue" }}>What You </span> <br /> Wanna Learn?</h1>
         <Box
           component="form"
           noValidate
