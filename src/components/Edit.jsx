@@ -4,6 +4,10 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import { deleteSkillAPI, updateSkillAPI } from '../services/AllAPI';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2'
 
 const style = {
   position: 'absolute',
@@ -17,7 +21,7 @@ const style = {
   p: 4,
 };
 
-function Edit({ skill,getskilldata }) {
+function Edit({ skill, getskilldata }) {
   const [open, setOpen] = useState(false);
   const [editSkill, setEditSkill] = useState({ ...skill });
 
@@ -25,7 +29,7 @@ function Edit({ skill,getskilldata }) {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-// update api
+  // update api
   const updateBtn = async () => {
     const { id, skillname, topicname, progress, status, deadline } = editSkill;
 
@@ -36,8 +40,25 @@ function Edit({ skill,getskilldata }) {
 
     try {
       const result = await updateSkillAPI(id, editSkill);
-         if (result.status === 200) {
+      if (result.status === 200) {
         alert("Skill updated successfully!");
+        //         Swal.fire({
+        //   title: "Skill updated successfully!",
+        //   showClass: {
+        //     popup: `
+        //       animate__animated
+        //       animate__fadeInUp
+        //       animate__faster
+        //     `
+        //   },
+        //   hideClass: {
+        //     popup: `
+        //       animate__animated
+        //       animate__fadeOutDown
+        //       animate__faster
+        //     `
+        //   }
+        // });
         handleClose();
         getskilldata()
       }
@@ -47,16 +68,19 @@ function Edit({ skill,getskilldata }) {
   };
 
   // delete api
-  const removeBtn = async(id)=>{
-   await deleteSkillAPI(id)
-   getskilldata()
-   alert('skill deleted successfully')
+  const removeBtn = async (id) => {
+    await deleteSkillAPI(id)
+    getskilldata()
+    //  alert('skill deleted successfully')
   }
 
   return (
     <div>
-      <button onClick={handleOpen} className='btn btn-primary'>edit</button>
-<button onClick={()=>removeBtn(skill?.id)} className='btn btn-danger ms-2' >delete</button>
+      {/* <button onClick={handleOpen} className='text-dark'></button> */}
+      <FontAwesomeIcon onClick={handleOpen} className='text-warning me-5 fs-4' icon={faPenToSquare} />
+      <FontAwesomeIcon onClick={() => removeBtn(skill?.id)} className='text-danger fs-4' icon={faTrash} />
+
+      {/* <button onClick={()=>removeBtn(skill?.id)} className='btn btn-danger ms-2' >delete</button> */}
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Typography id="modal-title" variant="h6" component="h2">
@@ -64,11 +88,11 @@ function Edit({ skill,getskilldata }) {
           </Typography>
 
           <Box sx={{ mt: 2, display: "flex", flexDirection: "column", gap: 1 }}>
-            <TextField value={editSkill.skillname} onChange={e => setEditSkill({ ...editSkill, skillname: e.target.value })}variant="standard"label="Skill Name"/>
-            <TextField value={editSkill.topicname} onChange={e => setEditSkill({ ...editSkill, topicname: e.target.value })} variant="standard"label="Topic Name"/>
-            <TextField value={editSkill.status} onChange={e => setEditSkill({ ...editSkill, status: e.target.value })}variant="standard"label="Status"/>
-            <TextField value={editSkill.deadline} onChange={e => setEditSkill({ ...editSkill, deadline: e.target.value })}variant="standard"label="Deadline"/>
-            <TextField value={editSkill.progress} onChange={e => setEditSkill({ ...editSkill, progress: e.target.value })} variant="standard"label="Note"/>
+            <TextField value={editSkill.skillname} onChange={e => setEditSkill({ ...editSkill, skillname: e.target.value })} variant="standard" label="Skill Name" />
+            <TextField value={editSkill.topicname} onChange={e => setEditSkill({ ...editSkill, topicname: e.target.value })} variant="standard" label="Topic Name" />
+            <TextField value={editSkill.status} onChange={e => setEditSkill({ ...editSkill, status: e.target.value })} variant="standard" label="Status" />
+            <TextField value={editSkill.deadline} onChange={e => setEditSkill({ ...editSkill, deadline: e.target.value })} variant="standard" label="Deadline" />
+            <TextField value={editSkill.progress} onChange={e => setEditSkill({ ...editSkill, progress: e.target.value })} variant="standard" label="Note" />
 
             <button onClick={updateBtn} className='btn btn-primary mt-3'>Update</button>
           </Box>

@@ -1,6 +1,7 @@
 import React from 'react'
 import CardNav from './CardNav'
 import logo from '/hyred.png';
+import { href } from 'react-router-dom';
 function Header() {
     const items = [
     {
@@ -13,12 +14,12 @@ function Header() {
       ]
     },
     {
-      label: "Projects", 
+      label: "Skill", 
       bgColor: "#000000ff",
       textColor: "#fff",
       links: [
-        { label: "Featured", ariaLabel: "Featured Projects" },
-        { label: "Case Studies", ariaLabel: "Project Case Studies" }
+        { label: "Skill Genarator", ariaLabel: "skill genarator page",href:"/skillgenerator" },
+        { label: "Skill view", ariaLabel: "skill view page",href:"/viewskilll" }
       ]
     },
     {
@@ -26,9 +27,9 @@ function Header() {
       bgColor: "#000000ff", 
       textColor: "#fff",
       links: [
-        { label: "Email", ariaLabel: "Email us" },
-        { label: "Twitter", ariaLabel: "Twitter" },
-        { label: "LinkedIn", ariaLabel: "LinkedIn" }
+        { label: "Email", ariaLabel: "Email us",href: "mailto:amgithshaji410@gmail.com" },
+        { label: "GitHub", ariaLabel: "GitHub",href:"https://github.com/amgithshaji" },
+        { label: "LinkedIn", ariaLabel: "LinkedIn",href:"https://www.linkedin.com/in/amgith-shaji-a47849323/" }
       ]
     }
   ];
