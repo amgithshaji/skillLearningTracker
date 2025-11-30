@@ -15,8 +15,9 @@ function LandinPage() {
       <section style={{ minHeight: "100vh", width: "100%", backgroundColor: "#f2f2f2" }}>
         <div style={{ paddingTop: "150px" }} className='text-center mb-1'>
           <h1 style={{ fontFamily: "Libre Baskerville, serif", letterSpacing: "-3px", fontSize: "45px" }} >Track.<span style={{ color: "blue", fontFamily: "Libre Baskerville, serif", }} > Learn.</span> Grow.</h1>
-          <div className="fw-bold" style={{ fontSize: "clamp(28px, 8vw, 80px)" }}>
-            <TextEffect />
+          <div>
+            <h1 className="fw-bold" style={{ fontSize: "clamp(50px, 8vw, 90px)" }} >Track Progress <span style={{color:"blue"}} >Now</span></h1>
+            {/* <TextEffect /> */}
           </div>
 
           <div className='fs-5 fw-light' >

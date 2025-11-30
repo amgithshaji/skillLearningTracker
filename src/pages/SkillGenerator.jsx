@@ -4,6 +4,8 @@ import TextField from '@mui/material/TextField';
 import { addSkillAPI } from '../services/AllAPI';
 import { useNavigate } from 'react-router-dom';
 
+
+
 function SkillGenerator() {
   const redirect = useNavigate()
 

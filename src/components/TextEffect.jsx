@@ -8,7 +8,7 @@ function TextEffect() {
 };
   return (
  <SplitText
- text={`Track progress <span class="blue-word">Now</span>`}
+ text={`Track Progress <span class="blue-word">Now</span>`}
 className="text-center font-semibold text-xl sm:text-2xl md:text-3xl"
 
   splitType="chars"
