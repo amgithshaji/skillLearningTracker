@@ -179,9 +179,11 @@ function LandinPage() {
   
   <div className="col-md-4 text-center">
   OUR USERS'S FEEDBACK
+  
   </div>
-  <div className="col-md-4">
-    <div className="border shadow p-5 ">
+  <div className="col-md-4 text-center">
+    <div className="border shadow  p-5 rounded-4 ">
+      <img width={"40%"} src="/js.jpg" alt="no img" />
 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus commodi quia, nemo quo, autem soluta, totam facere eum laborum assumenda deserunt modi officiis hic odit velit ipsa! Dolores, minima eius?</p>
     </div>
   </div>
